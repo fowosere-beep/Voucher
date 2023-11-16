@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="">Mtn</label>
+    <select>
+      <option value="">--</option> 
+      <option value="">100</option> 
+    </select>
+    <button onclick="generate()">Generate Voucher</button>
+    <p id="display"></p>
+
+    <input id="input1" type="text">
+    <button onclick="recharge()">Recharge Voucher</button>
+</body>
+
+
+<script>
+function generate(){
+    let display = document.getElementById("display")
+    let random_number = Math.floor(Math.random() * 1000000000000000)
+    display.innerHTML = random_number
+    alert("You have successfully generate a Voucher")
+}
+
+function recharge(){
+    let input1 = document.getElementById("input1");
+    if(input1.value == `*555*${display.innerHTML}#`){
+        alert("Your recharge of 100 is successful")
+    }else{
+        alert("Invalid Voucher")
+    }
+    }
+</script>
+</html>
